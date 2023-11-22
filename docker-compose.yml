@@ -3,6 +3,7 @@ services:
   mongodb:  # База данных
     image: mongodb/mongodb-community-server:6.0-ubi8
     env_file: .env
+    restart: always
     container_name: mongodb
     ports:
       - "27017:27017"
