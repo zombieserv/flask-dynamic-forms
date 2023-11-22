@@ -1,0 +1,29 @@
+version: '3'
+services:
+  mongodb:  # База данных
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    env_file: .env
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - type: bind
+        source: ./data
+        target: /data/db
+
+  flask-app:  # Приложение форм
+    build:
+      context: .
+    container_name: flask-app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+
+  tests:  # Тесты API, заполнение БД тестовыми данными
+    build:
+      context: .
+      dockerfile: Dockerfile.tests
+    container_name: tests
+    depends_on:
+      - flask-app
