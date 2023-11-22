@@ -3,7 +3,11 @@ import os
 from mongoengine import connect
 from mongoengine import DynamicDocument, StringField, DynamicField
 
-connect('e_com_db', host=os.getenv("DB_STRING"))
+DB_HOST = "mongodb://{}:{}@mongodb:27017".format(
+    os.getenv('MONGODB_INITDB_ROOT_USERNAME'),
+    os.getenv('MONGODB_INITDB_ROOT_PASSWORD'))
+
+connect('e_com_db', host=DB_HOST)
 
 
 class DynamicForm(DynamicDocument):
