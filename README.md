@@ -22,7 +22,7 @@
 5. Приложение будет доступно по адресу http://localhost:5000
 
 ## Структура проекта
-`main.py` - Основной файл приложения, содержащий точку входа и роутинг
+`main.py` - Основной файл приложения, содержащий точку входа и роутинг.
 
 `models.py` - Модели данных для работы с MongoDB.
 
@@ -38,4 +38,5 @@
 
 ## Импорт конфига тестов в Insomnia
 Для ручного тестирования прилагается профиль в [Insomnia](https://insomnia.rest/), следуйте [этой инструкции](https://docs.insomnia.rest/insomnia/import-export-data).
-Используйте следующую ссылку для импорта: [Insomnia_2023-11-22.json](https://raw.githubusercontent.com/zombieserv/flask-dynamic-forms/master/)
+
+Используйте следующую ссылку для импорта: [Insomnia_2023-11-22.json](https://github.com/zombieserv/flask-dynamic-forms/blob/master/Insomnia_2023-11-22.json).
